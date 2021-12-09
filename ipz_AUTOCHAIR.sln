@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ipz_AUTOCHAIR", "ipz_AUTOCHAIR.csproj", "{26DB083E-991D-4005-8929-4C1A436FD8E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ipz_Server_AUTOCHAIR", "..\Users\Nazar\source\repos\ipz_Server_AUTOCHAIR\ipz_Server_AUTOCHAIR.csproj", "{1BF6B9DC-592E-4657-AF1D-13D2172E81CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ipz_Server_AUTOCHAIR", "..\Users\Nazar\source\repos\ipz_Server_AUTOCHAIR\ipz_Server_AUTOCHAIR.csproj", "{1BF6B9DC-592E-4657-AF1D-13D2172E81CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin_App", "..\Users\Nazar\source\repos\Admin_App\Admin_App.csproj", "{A8A4B83D-1421-4000-929A-9F9C5AB49840}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1BF6B9DC-592E-4657-AF1D-13D2172E81CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BF6B9DC-592E-4657-AF1D-13D2172E81CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BF6B9DC-592E-4657-AF1D-13D2172E81CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A4B83D-1421-4000-929A-9F9C5AB49840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A4B83D-1421-4000-929A-9F9C5AB49840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A4B83D-1421-4000-929A-9F9C5AB49840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A4B83D-1421-4000-929A-9F9C5AB49840}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -97,6 +97,7 @@ namespace ipz_AUTOCHAIR
                     else
                     {
                         this.Hide();
+                        Client.ID = int.Parse(responce);
                         MainProgramWindow newForm = new MainProgramWindow();
                         newForm.ShowDialog();
                         this.Close();
