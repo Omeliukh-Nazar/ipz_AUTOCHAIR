@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Windows.Forms;
 using System.Threading;
+using System.Text.Json;
 
 namespace ipz_AUTOCHAIR
 {
@@ -76,6 +77,35 @@ namespace ipz_AUTOCHAIR
                 data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
             }
             return data;
+        }
+        internal int GetSize()
+        {
+            Byte[] bytes = new Byte[256];
+            String data = null;
+            int i = 0;
+            while ((i = networkStream.Read(bytes, 0, bytes.Length)) != 0)
+            {
+                // Translate data bytes to a ASCII string.
+                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                return int.Parse(data);
+            }
+            return 256;
+        }
+
+        public T GetObject<T>(int size)
+        {
+            Byte[] bytes = new Byte[size];
+            String data = null;
+            int i = 0;
+            while ((i = networkStream.Read(bytes, 0, bytes.Length)) != 0)
+            {
+                // Translate data bytes to a ASCII string.
+                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                var deserialized = JsonSerializer.Deserialize<T>(System.Text.Encoding.ASCII.GetBytes(data));
+                return deserialized;
+            }
+            var deserialized1 = JsonSerializer.Deserialize<T>(System.Text.Encoding.ASCII.GetBytes(data));
+            return deserialized1;
         }
 
     }

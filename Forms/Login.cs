@@ -100,6 +100,7 @@ namespace ipz_AUTOCHAIR
                         Client.ID = int.Parse(responce);
                         MainProgramWindow newForm = new MainProgramWindow();
                         newForm.ShowDialog();
+                        _client.Close();
                         this.Close();
                     }
                 }
