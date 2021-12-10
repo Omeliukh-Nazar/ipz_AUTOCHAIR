@@ -142,7 +142,7 @@ namespace ipz_AUTOCHAIR
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(133)))), ((int)(((byte)(91)))));
             this.label3.Font = new System.Drawing.Font("Showcard Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(214)))), ((int)(((byte)(171)))));
-            this.label3.Location = new System.Drawing.Point(373, 88);
+            this.label3.Location = new System.Drawing.Point(373, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(252, 22);
             this.label3.TabIndex = 5;
@@ -153,7 +153,6 @@ namespace ipz_AUTOCHAIR
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -163,7 +162,7 @@ namespace ipz_AUTOCHAIR
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1001, 589);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1001, 786);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // MainProgramWindow
@@ -172,7 +171,7 @@ namespace ipz_AUTOCHAIR
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(133)))), ((int)(((byte)(91)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.ClientSize = new System.Drawing.Size(1000, 900);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
@@ -190,7 +189,6 @@ namespace ipz_AUTOCHAIR
             ((System.ComponentModel.ISupportInitialize)(this.OrderListBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BucketBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

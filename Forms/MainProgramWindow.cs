@@ -41,11 +41,11 @@ namespace ipz_AUTOCHAIR
                 tableLayoutPanel.ColumnCount = 1;
                 tableLayoutPanel.RowCount = 5;
                 tableLayoutPanel.Dock = DockStyle.Fill;
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+                tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 5F));
 
                 Label labelName = new Label() { TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.Fill };
                 labelName.Text = chair.Name;
@@ -60,7 +60,7 @@ namespace ipz_AUTOCHAIR
                 PictureBox picture = new PictureBox()
                 {
                     Image = image,
-                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    SizeMode = PictureBoxSizeMode.Zoom,
                     Dock = DockStyle.Fill
                     
                 };
@@ -102,15 +102,24 @@ namespace ipz_AUTOCHAIR
                 tableLayoutPanel2.Controls.Add(upDown, 2, 0);
 
                 tableLayoutPanel.Controls.Add(tableLayoutPanel2, 0, 4);
-
+                
                 tableLayoutPanel1.Controls.Add(tableLayoutPanel, col, row);
+                tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 700F));
+                if (col == 1)
+                {
+                    tableLayoutPanel1.RowCount = tableLayoutPanel1.RowCount + 1;
+                }
                 col++;
                 if (col == 2)
                 {
                     row++;
                     col = 0;
                 }
-
+            }
+            for (int i = 0; i < tableLayoutPanel1.RowCount-1; i++)
+            {
+                tableLayoutPanel1.RowStyles[i].SizeType = SizeType.Absolute;
+                tableLayoutPanel1.RowStyles[i].Height = 700;
             }
         }
 
