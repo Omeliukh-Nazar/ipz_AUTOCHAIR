@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ipz_AUTOCHAIR.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace ipz_AUTOCHAIR
     public partial class MainProgramWindow : Form
     {
         public List<Chair> Chairs { get; set; }
+        public List<Order> Orders = new List<Order>(); 
         public MainProgramWindow()
         {
             Client client = new Client();
@@ -76,9 +78,11 @@ namespace ipz_AUTOCHAIR
 
                 Button btn_Add = new Button() 
                 {
+                   Name = chair.Name,
                    Dock = DockStyle.Fill,
                    Text = "Add To Bucket"
                 };
+                btn_Add.Click += Btn_Add_Click;
                 tableLayoutPanel2.Controls.Add(btn_Add, 0, 0);
                 Label labelCount = new Label() 
                 {
@@ -109,10 +113,28 @@ namespace ipz_AUTOCHAIR
 
             }
         }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+            string prise = (sender as Button).Parent.Parent.Controls[2].Text.Split().First();
+            Chair chair = Chairs.Find(x => x.Name == (sender as Button).Name);
+            Order order = new Order()
+            {
+                Chair = chair,
+                Count = int.Parse((sender as Button).Parent.Controls[2].Text),
+                Prise = int.Parse(prise),
+                UserId = Client.ID
+                
+            };
+            Orders.Add(order);
+            MessageBox.Show($"{int.Parse((sender as Button).Parent.Controls[2].Text)} of {(sender as Button).Name} added to bucket!","Added to Bucket");
+        }
+
+        
         private void BucketBox_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Bucket newForm = new Bucket();
+            Bucket newForm = new Bucket(Orders);
             newForm.ShowDialog();
             this.Close();
         }

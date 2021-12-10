@@ -107,7 +107,50 @@ namespace ipz_AUTOCHAIR
             var deserialized1 = JsonSerializer.Deserialize<T>(System.Text.Encoding.ASCII.GetBytes(data));
             return deserialized1;
         }
+        public void SendSizeOfObject(int size)
+        {
+            try
+            {
+                // Translate the passed message into ASCII and store it as a Byte array.
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(size.ToString());
 
+                // Send the message to the connected TcpServer.
+                networkStream.Write(data, 0, data.Length);
+                Thread.Sleep(100);
+            }
+            catch (ArgumentNullException e)
+            {
+                MessageBox.Show($"ArgumentNullException: {e}");
+            }
+            catch (SocketException e)
+            {
+                MessageBox.Show($"SocketException: {e}");
+            }
+        }
+        public int GetSizeOfObject<T>(T obj)
+        {
+            Byte[] data = JsonSerializer.SerializeToUtf8Bytes(obj);
+            return data.Length;
+        }
+        public void SendObject<T>(T obj)
+        {
+            try
+            {
+                // Translate the passed message into ASCII and store it as a Byte array.
+                Byte[] data = JsonSerializer.SerializeToUtf8Bytes(obj);
+
+                // Send the message to the connected TcpServer.
+                networkStream.Write(data, 0, data.Length);
+            }
+            catch (ArgumentNullException e)
+            {
+                MessageBox.Show($"ArgumentNullException: {e}");
+            }
+            catch (SocketException e)
+            {
+                MessageBox.Show($"SocketException: {e}");
+            }
+        }
     }
 
 }
