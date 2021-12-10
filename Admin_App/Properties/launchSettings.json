@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Admin_App": {
+      "commandName": "Project"
+    }
+  }
+}
